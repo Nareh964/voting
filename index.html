@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Usecase</title>
+</head>
+<body>
+    <h1>Welcome to voting</h1>
+    <div class="container">
+        <div id="auth">
+            <h2>Log in / Sign up</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="signup()">Sign Up</button>
+            <button onclick="login()">Log In</button>
+        </div>
+
+        <div id="app" class="hidden">
+            <h2>Welcome, <span id="welcome-name"></span>!</h2>
+            <button onclick="logout()">Log Out</button>
+
+            <div id="adminPanel" class="hidden">
+                <h3>Access to create polls as an Admin</h3>
+                <input type="text" id="pollQuestion" placeholder="Write down a question">
+                <input type="text" id="pollOption1" placeholder="Option 1">
+                <input type="text" id="pollOption2" placeholder="Option 2">
+                <button onclick="createPoll()">Create Poll</button>
+            </div>
+
+            <div id="userPanel">
+                <h3>Voting Polls</h3>
+                <div id="pollsContainer">
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="pollTemplate">
+        <div class="poll">
+            <h4 class="poll-question"></h4>
+            <div class="poll-options"></div>
+            <p class="voted-msg hidden">Click again on the poll to unvote</p>
+        </div>
+    </template>
+
+
+    
+
+<script src="script.js"></script>
+</body>
+</html>
